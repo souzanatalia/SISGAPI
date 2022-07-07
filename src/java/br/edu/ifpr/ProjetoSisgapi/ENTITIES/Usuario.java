@@ -10,24 +10,28 @@ package br.edu.ifpr.ProjetoSisgapi.ENTITIES;
  */
 public class Usuario {
     int id;
-    int curso;
-    int projeto;
+    int tipo;
     String nome;
     int matricula;
     String email;
     String senha;
-    String tipo;
-   
 
-    public Usuario(int id, int curso, int projeto, String nome, int matricula, String email, String senha, String tipo) {
+    public Usuario(int id, int tipo, String nome, int matricula, String email, String senha) {
         this.id = id;
-        this.curso = curso;
-        this.projeto = projeto;
+        this.tipo = tipo;
         this.nome = nome;
         this.matricula = matricula;
         this.email = email;
         this.senha = senha;
+        
+    }
+
+    public Usuario(int tipo, String nome, int matricula, String email, String senha) {
         this.tipo = tipo;
+        this.nome = nome;
+        this.matricula = matricula;
+        this.email = email;
+        this.senha = senha;
     }
 
     public int getId() {
@@ -38,20 +42,12 @@ public class Usuario {
         this.id = id;
     }
 
-    public int getCurso() {
-        return curso;
+    public int getTipo() {
+        return tipo;
     }
 
-    public void setCurso(int curso) {
-        this.curso = curso;
-    }
-
-    public int getProjeto() {
-        return projeto;
-    }
-
-    public void setProjeto(int projeto) {
-        this.projeto = projeto;
+    public void setTipo(int tipo) {
+        this.tipo = tipo;
     }
 
     public String getNome() {
@@ -84,14 +80,5 @@ public class Usuario {
 
     public void setSenha(String senha) {
         this.senha = senha;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-     
+    }  
 }

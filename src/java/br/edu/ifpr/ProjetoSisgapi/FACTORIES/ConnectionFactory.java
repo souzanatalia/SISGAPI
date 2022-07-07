@@ -14,6 +14,6 @@ import java.sql.SQLException;
  */
 public class ConnectionFactory {
      public Connection getConnection() throws SQLException{
-        return DriverManager.getConnection("jdbc:derby://localhost:1527/bdProjetoSisgapi");
+        return DriverManager.getConnection("jdbc:derby://localhost:1527/bdProjetoSisgapi2");
     }
 }
