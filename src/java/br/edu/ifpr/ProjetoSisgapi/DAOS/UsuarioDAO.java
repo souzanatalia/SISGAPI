@@ -17,7 +17,7 @@ import java.sql.SQLException;
 public class UsuarioDAO {
     
     public void adicionar(Usuario u) throws SQLException {
-        String sql = "INSERT INTO USUARIOS ( nome, matricula, tipo, email,"
+        String sql = "INSERT INTO USUARIOS (nome, matricula, tipo, email,"
                 + "senha) VALUES (?,?,?,?,?)";
         
     
@@ -25,7 +25,7 @@ public class UsuarioDAO {
         try (Connection connection = new ConnectionFactory().getConnection()) {
             PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.setString(1, u.getNome());
-            stmt.setInt(2, u.getMatricula());
+            stmt.setLong(2, u.getMatricula());
             stmt.setInt(3, u.getTipo());
             stmt.setString(4, u.getEmail());
             stmt.setString(5, u.getSenha());

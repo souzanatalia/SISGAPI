@@ -12,27 +12,19 @@ public class Usuario {
     int id;
     int tipo;
     String nome;
-    int matricula;
+    Long matricula;
     String email;
     String senha;
 
-    public Usuario(int id, int tipo, String nome, int matricula, String email, String senha) {
-        this.id = id;
+    public Usuario(int tipo, String nome, Long matricula, String email, String senha) {
         this.tipo = tipo;
         this.nome = nome;
         this.matricula = matricula;
         this.email = email;
         this.senha = senha;
-        
     }
 
-    public Usuario(int tipo, String nome, int matricula, String email, String senha) {
-        this.tipo = tipo;
-        this.nome = nome;
-        this.matricula = matricula;
-        this.email = email;
-        this.senha = senha;
-    }
+ 
 
     public int getId() {
         return id;
@@ -58,13 +50,14 @@ public class Usuario {
         this.nome = nome;
     }
 
-    public int getMatricula() {
+    public Long getMatricula() {
         return matricula;
     }
 
-    public void setMatricula(int matricula) {
+    public void setMatricula(Long matricula) {
         this.matricula = matricula;
     }
+
 
     public String getEmail() {
         return email;

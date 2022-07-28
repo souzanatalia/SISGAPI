@@ -52,36 +52,35 @@ public class CadastrarUsuario extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
 
         String nome, email, senha, senha2;
-        int matricula, tipo;
+        int tipo;
+        Long matricula;
         Usuario u = null;
 
         nome = request.getParameter("nome");
         email = request.getParameter("email");
-        matricula = Integer.valueOf(request.getParameter("login"));
+        matricula = Long.parseLong(request.getParameter("login"));
         senha = request.getParameter("senha");
         senha2 = request.getParameter("confirmarsenha");
         tipo = 3;
         
-        if(senha == senha2){
-           u = new Usuario(tipo, nome, matricula, email, senha);
+        if(senha.equals(senha2)){
+            u = new Usuario(tipo, nome, matricula, email, senha);
+            System.out.println("to aqui");
         }
         else{
-            System.out.println("erro na senha");
+            response.sendRedirect("cadastrarUsuario.html");
         }
+        
+     
         UsuarioModel model = new UsuarioModel();
 
         try {
             model.create(u);
 
-            // response.sendRedirect("CadastrarUsuario?m=Usuario cadastrado com sucesso!");
+            response.sendRedirect("cadastrarUsuario.html");
         } catch (SQLException ex) {
             Logger.getLogger(CadastrarUsuario.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-        request.setAttribute("usuarios", model.getUsuarios());
-
-        //request.getRequestDispatcher("WEB-INF/Usuarios.jsp").
-        // forward(request, response);
     }
    
 
