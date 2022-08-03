@@ -11,22 +11,26 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
   padding: 1;
 }
 header{
-  background-color: LightSteelBlue;
+  background-color: SteelBlue;
   height: 70px;
   font-weight: bold;
   padding: 20px;
 }
 
 .topo{
-  width: 100%;
   font-size: 50px;
   font-family: "Verdana";
   letter-spacing: 10px;
 }
+.entrar{
+    float: right;
+    align-content: center;
+}
 
 .sis{
-  padding-top: 50px;
+  padding-top: 15%;
   text-align: center;
+  font-size: 30px;
 }
 
 .button{
@@ -34,7 +38,12 @@ header{
 }
 
 footer{
-  padding-top: 10%;
-  background-color: LightSteelBlue;
+  position: absolute;
+  bottom: 0;
+  background: SteelBlue;
+  width: 100%;
+  padding-top: 40px;
+  text-align: center;
+  font-size: 22px;
 }
 
